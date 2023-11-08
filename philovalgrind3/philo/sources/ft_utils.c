@@ -6,7 +6,7 @@
 /*   By: aguede <aguede@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:18:41 by aguede            #+#    #+#             */
-/*   Updated: 2023/11/02 15:07:11 by aguede           ###   ########.fr       */
+/*   Updated: 2023/11/07 21:54:46 by aguede           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ void	ft_print_action(char *str, t_philo *philo)
 	pthread_mutex_unlock(philo->print_lock);
 }
 
-void	ft_destroy(t_philo *philo, pthread_mutex_t *forks, t_my_locks *my_locks, pthread_t *threads)
+void	ft_destroy(t_philo *philo, pthread_mutex_t *forks, t_my_locks *my_locks,
+		pthread_t *threads)
 {
 	int	i;
 

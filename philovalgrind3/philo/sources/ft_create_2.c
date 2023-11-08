@@ -6,7 +6,7 @@
 /*   By: aguede <aguede@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:07:05 by aguede            #+#    #+#             */
-/*   Updated: 2023/11/02 18:04:31 by aguede           ###   ########.fr       */
+/*   Updated: 2023/11/07 21:56:27 by aguede           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,13 @@
 t_philo	*ft_init_philo_part2(t_philo *philo, int argc, char **argv)
 {
 	int		i;
-	int		*j;
 	size_t	time;
 
 	time = get_proper_time();
 	i = 0;
-	j = malloc(sizeof(int) * 1);
-	*j = 0;
 	while (i < ft_atoi(argv[1]))
 	{
 		philo[i].full = FALSE;
-		philo[i].dead = j;
 		philo[i].amount = ft_atoi(argv[1]);
 		philo[i].start_time = time;
 		philo[i].last_meal_time = time;
@@ -57,10 +53,14 @@ t_philo	*ft_init_philo_threads(t_philo *philo, pthread_t *thread,
 		int amount_of_philos, t_my_locks *my_locks)
 {
 	int	i;
+	int	*j;
 
 	i = 0;
+	j = malloc(sizeof(int) * 1);
+	*j = 0;
 	while (i < amount_of_philos)
 	{
+		philo[i].dead = j;
 		philo[i].thread_phil = thread[i];
 		philo[i].index = i + 1;
 		philo[i].food_lock = my_locks->food_lock;

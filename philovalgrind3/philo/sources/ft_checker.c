@@ -6,7 +6,7 @@
 /*   By: aguede <aguede@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 17:50:41 by aguede            #+#    #+#             */
-/*   Updated: 2023/11/02 14:22:11 by aguede           ###   ########.fr       */
+/*   Updated: 2023/11/07 22:57:43 by aguede           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_check_all_eat(t_philo *philos)
 		pthread_mutex_unlock(philos->food_lock);
 		i++;
 	}
-	if (finished_eating == philos[0].amount)
+	if (finished_eating == (philos[0].amount))
 	{
 		pthread_mutex_lock(philos->dead_lock);
 		*(philos->dead) = 1;

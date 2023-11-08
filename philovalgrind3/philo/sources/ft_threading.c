@@ -6,7 +6,7 @@
 /*   By: aguede <aguede@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:11:53 by aguede            #+#    #+#             */
-/*   Updated: 2023/11/02 15:36:03 by aguede           ###   ########.fr       */
+/*   Updated: 2023/11/07 21:53:45 by aguede           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ void	ft_threading(t_philo *philo, pthread_mutex_t *forks,
 	{
 		if (pthread_join(philo[i].thread_phil, NULL) != 0)
 			ft_destroy(philo, forks, my_locks, threads);
-		else
-			printf("%i joined\n", i);
 		i++;
 	}
 }
